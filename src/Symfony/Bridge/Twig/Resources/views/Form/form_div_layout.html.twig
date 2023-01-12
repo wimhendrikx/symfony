@@ -172,8 +172,8 @@
 {%- endblock dateinterval_widget -%}
 
 {%- block number_widget -%}
-    {# type="number" doesn't work with floats in localized formats #}
-    {%- set type = type|default('text') -%}
+    {%- set type = type|default('number') -%}
+    {%- set attr = attr|merge({step: 'any'}) -%}
     {{ block('form_widget_simple') }}
 {%- endblock number_widget -%}
 
